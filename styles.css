@@ -1,0 +1,231 @@
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header-item {
+        margin-bottom: 10px;
+    }
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #81E979;
+    font-family: "Irish Grover", serif;
+    font-size: 16px;
+    color: black;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+    padding: 2em;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-right: 1em;
+}
+
+.title {
+    font-style: normal;
+    font-size: 6em;
+    padding-left: 20px;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.focus-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #B0FE76;
+    padding: 4em 3em;
+    border-radius: 2em;
+}
+
+.focus-zone ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+.focus-zone li a{
+    color: #586F7C;
+    text-decoration: none;
+    font-size: 1.4em;
+    padding: 2em;
+    transition: background-color 0.3s;
+}
+
+.focus-zone li a:hover{
+    background-color: #81E979;
+    border-radius: 5px;
+}
+
+.focus-zone li a:active{
+    background-color: #81E979;
+    border-radius: 5px;
+}
+
+.timer{
+    font-size: 3em;
+}
+
+.btn-wrapper{
+ display: flex;
+ gap: 1.8em;   
+}
+
+button{
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    padding: 0.5em 1.5em;
+    border-radius: 0.5em;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover{
+    background-color: #81E979;
+    box-shadow: 5px 5px #586F7C;
+}
+
+
+.task-zone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #B0FE76;
+    padding: 4em 3em;
+    border-radius: 2em;
+    background-color: #B0FE76;
+    color: #586F7C;
+    width: 25%;
+}
+
+.task-zone h2{
+    font-size: 2em;
+}
+
+.task-zone p{
+    font-size: 1.4em;
+}
+
+.add-task{
+    padding: 3em;
+}
+
+#add-task{
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    padding: 0.5em 1.5em;
+    border-radius: 0.5em;
+    transition: 0.2s ease-in-out;
+    border: 2px dotted #586F7C;
+}
+
+.popup-form {
+    display: none; /* Initially hidden */
+    position: relative;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fade-in 0.5s ease-in-out;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 1em; /* Add spacing between form elements */
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    background-color: #fff;
+    align-self: flex-end; /* Align the close button to the top right */
+    margin-bottom: 10px;
+}
+
+.close-btn:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+button.save {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #81E979;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.save:hover {
+    background-color: #68c357;
+}
+
+
+@keyframes pop-up {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.task {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
