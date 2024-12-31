@@ -197,6 +197,8 @@ function validateForm(event) {
       taskElement.remove();
     });
   });
+
+  event.preventDefault();
 }
 
 
