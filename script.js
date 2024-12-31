@@ -152,6 +152,9 @@ function closePopup() {
 }
 
 function validateForm(event) {
+
+  event.preventDefault();
+  
   // Get references to the input elements
   const taskName = document.getElementById("task-name");
   const nPomodoros = document.getElementById("pomodoro-number");
@@ -197,8 +200,6 @@ function validateForm(event) {
       taskElement.remove();
     });
   });
-
-  event.preventDefault();
 }
 
 
