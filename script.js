@@ -200,6 +200,8 @@ function validateForm(event) {
       taskElement.remove();
     });
   });
+
+  closePopup();
 }
 
 

@@ -1,15 +1,5 @@
-@media (max-width: 600px) {
-    .header-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .header-item {
-        margin-bottom: 10px;
-    }
-}
-
-html {
+/* Base styles for all devices */
+html, body {
     margin: 0;
     padding: 0;
 }
@@ -39,14 +29,91 @@ body {
     font-style: normal;
     font-size: 6em;
     padding-left: 20px;
+    text-align: center;
 }
 
 .body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding: 1em;
 }
 
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+
+    .logo {
+        width: 100px; /* Adjust for smaller screens */
+        height: 100px;
+        margin-bottom: 1em;
+    }
+
+    .title {
+        font-size: 3em; /* Reduced for better fit */
+    }
+
+    .body {
+        flex-direction: column; /* Stack sections vertically */
+        gap: 2em; /* Add spacing between sections */
+    }
+
+    .focus-zone, .task-zone {
+        width: 90%; /* Use most of the screen width */
+        padding: 2em 1em; /* Reduce padding for better fit */
+        border-radius: 1em;
+    }
+
+    .focus-zone ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center;
+        gap: 1em;
+    }
+
+    .focus-zone li a {
+        font-size: 1.2em;
+        padding: 1em; /* Adjust padding */
+    }
+
+    .timer {
+        font-size: 2em; /* Adjust for better visibility */
+    }
+
+    .btn-wrapper {
+        flex-direction: column;
+        gap: 1em; /* Add spacing between buttons */
+    }
+
+    button {
+        font-size: 1em;
+        padding: 0.5em 1em; /* Adjust padding */
+    }
+
+    .task-zone {
+        width: 90%;
+        padding: 2em 1em;
+    }
+
+    .popup-form {
+        width: 90%;
+        padding: 1em;
+    }
+
+    form label, form input {
+        font-size: 1em; /* Adjust font sizes for smaller screens */
+    }
+
+    button.save {
+        font-size: 0.9em;
+        padding: 0.5em 1em;
+    }
+}
+
+/* Other styles */
 .focus-zone {
     display: flex;
     flex-direction: column;
@@ -56,13 +123,13 @@ body {
     border-radius: 2em;
 }
 
-.focus-zone ul{
+.focus-zone ul {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
 }
 
-.focus-zone li a{
+.focus-zone li a {
     color: #586F7C;
     text-decoration: none;
     font-size: 1.4em;
@@ -70,26 +137,21 @@ body {
     transition: background-color 0.3s;
 }
 
-.focus-zone li a:hover{
+.focus-zone li a:hover {
     background-color: #81E979;
     border-radius: 5px;
 }
 
-.focus-zone li a:active{
-    background-color: #81E979;
-    border-radius: 5px;
-}
-
-.timer{
+.timer {
     font-size: 3em;
 }
 
-.btn-wrapper{
- display: flex;
- gap: 1.8em;   
+.btn-wrapper {
+    display: flex;
+    gap: 1.8em;
 }
 
-button{
+button {
     font-size: 1.3em;
     letter-spacing: 1px;
     padding: 0.5em 1.5em;
@@ -97,37 +159,35 @@ button{
     transition: 0.2s ease-in-out;
 }
 
-button:hover{
+button:hover {
     background-color: #81E979;
     box-shadow: 5px 5px #586F7C;
 }
 
-
-.task-zone{
+.task-zone {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #B0FE76;
     padding: 4em 3em;
     border-radius: 2em;
-    background-color: #B0FE76;
     color: #586F7C;
     width: 25%;
 }
 
-.task-zone h2{
+.task-zone h2 {
     font-size: 2em;
 }
 
-.task-zone p{
+.task-zone p {
     font-size: 1.4em;
 }
 
-.add-task{
+.add-task {
     padding: 3em;
 }
 
-#add-task{
+#add-task {
     font-size: 1.3em;
     letter-spacing: 1px;
     padding: 0.5em 1.5em;
@@ -146,7 +206,6 @@ button:hover{
     border-radius: 10px;
     text-align: center;
     max-width: 400px;
-    width: 90%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: fade-in 0.5s ease-in-out;
     flex-direction: column;
@@ -154,7 +213,7 @@ button:hover{
 
 form {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     gap: 1em; /* Add spacing between form elements */
 }
 
@@ -176,13 +235,12 @@ form input {
     color: #999;
     cursor: pointer;
     background-color: #fff;
-    align-self: flex-end; /* Align the close button to the top right */
+    align-self: flex-end;
     margin-bottom: 10px;
 }
 
 .close-btn:hover {
     color: #000;
-    background-color: #fff;
 }
 
 button.save {
@@ -198,7 +256,6 @@ button.save {
 button.save:hover {
     background-color: #68c357;
 }
-
 
 @keyframes pop-up {
     0% {
@@ -216,16 +273,15 @@ button.save:hover {
     margin: 10px 0;
     border-radius: 5px;
     position: relative;
-  }
-  
-  .delete-btn {
+}
+
+.delete-btn {
     background: none;
     border: none;
     font-size: 20px;
     position: absolute;
-    right: 10px;
+    right: 5px;
     top: 10px;
-    cursor: pointer;
     padding: 0;
     margin: 0;
-  }
+}
